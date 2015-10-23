@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        var n = NaN;
+        var random;
+        var guess;
+
+        while(isNaN(n)){
+            n = parseInt(prompt("what should be the highest number?"));
+        };
+
+        random - Math.floor(Math.random()) * n);
+        console.log(random);
+
+        while (guess !== random) {
+            guess = parseInt(prompt("guess"))
+            console.log(guess, random);
+            if (guess > random) {
+                alert("too high")
+            }
+            if (guess < random) {
+                alert("too low")
+            }
+            if (guess === random) {
+                alert("nice guess")
+            }
+        }
+    </script>
+</body>
+</html>

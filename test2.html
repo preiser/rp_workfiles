@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Document</title>
+</head>
+
+<body>
+
+   <input id="askInput">Ask Question</input>
+   <button id="askBtn"></button>
+
+   <div id="glow"> </div>
+
+   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+   <script>
+
+      var phraseArr = ["what's happening?", "this is nuts, yes?", "how long have i been doing this?"];
+      
+      var randAnswer = function(randAns) {
+         phraseArr[randAns];
+      }
+
+      var random = Math.floor(Math.random() * 2) + 1;
+      console.log(randAnswer(random));
+
+      $('#askBtn').click(function() {
+         $('#glow').append(phraseArr[randAns] + "");
+      });
+   </script>
+
+</body>
+
+</html>

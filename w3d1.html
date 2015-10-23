@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/normalize.css">
+   <link rel="stylesheet" href="css/skeleton.css">
+   <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+   <div class="container">
+   <nav class="navbar">
+      <div class="nav">
+         <ul class="navbar-list">
+            <li class="navbar-item"><a id="asheville" class="navbar-link" href="#">Asheville</a></li>
+            <li class="navbar-item"><a id="tampa" class="navbar-link" href="#">Tampa</a></li>
+            <li class="navbar-item"><a id="sandiego" class="navbar-link" href="#">San Diego</a></li>
+         </ul>
+      </div>
+   </nav>
+   <div class="docs-section">
+      <div id="current"></div>
+      <div id="high"></div>
+      <div id="low"></div>
+      <div id="description"></div>
+      <div id="wind"></div>
+      <div id="sunrise"></div>
+      <div id="sunset"></div>
+   </div>
+</div>
+   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+   <script>
+   var to_be_run_on_server_response = function(weather_data){
+      $('#current').text(weather_data.main.temp);
+      $('#low').text(weather_data.main.temp_min);
+      $('#high').text(weather_data.main.temp_max);
+      $('#description').text(weather_data.weather[0].description);
+      $('#sunrise').text(new Date(weather_data.sys.sunrise * 1000));
+      $('#sunset').text(new Date(weather_data.sys.sunset * 1000));
+
+   };
+
+   $('#asheville').click(function() {
+      $.get('http://api.openweathermap.org/data/2.5/weather?q=Asheville&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(to_be_run_on_server_response);
+      show_div('#asheville');
+      hide_div('#tampa');
+      hide_div('#sandiego');
+   });
+
+   $('#tampa').click(function() {
+      $.get('http://api.openweathermap.org/data/2.5/weather?q=Tampa&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(to_be_run_on_server_response);
+      show_div('#london');
+      hide_div('#asheville');
+      hide_div('#sandiego');
+   });
+
+   $('#sandiego').click(function() {
+      $.get('http://api.openweathermap.org/data/2.5/weather?q=SanDiego&units=imperial&APPID=93b03ba103c6cabec96f47a6f650769e').success(to_be_run_on_server_response);
+      show_div('#sandiego');
+      hide_div('#asheville');
+      hide_div('#tampa');
+   });
+
+   </script>
+</body>
+</html>

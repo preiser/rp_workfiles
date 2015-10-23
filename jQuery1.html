@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Document</title>
+</head>
+
+<body>
+   <div id="everything">
+      <h1>A heading!</h1>
+      <p>Here's some text!</p>
+      <p>Here's a second set of text!</p>
+      <div class="holder">
+         <ul>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+         </ul>
+      </div>
+      <div class="holder">
+         <ol>
+            <li>List Item 4</li>
+            <li>List Item 5</li>
+            <li>List Item 6</li>
+         </ol>
+      </div>
+      <div id="change-me">This part needs to change!</div>
+      <div id="secret">We should hide this!</div>
+   </div>
+
+   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+   <script>
+      //$('h1').css({'color': 'blue', 'background-color': 'green'});
+      //$('body').css('background-color', 'red');
+      //$('#everything').css('font-size', '40');
+      // $('.holder').css('border', 'solid 1px black');
+      // $('ul').children('li').css('font-weight', 'bold');
+      // $('h1').next('p').css('color', 'green');
+      // $('#secret').hide();
+      // $('#secret').toggle();
+      $('body').append(new_div);
+      $('#container').html('<img src="https://s-media-cache-ak0.pinimg.com/236x/f5/59/b1/f559b16c206979b717c131879da6b86e.jpg"></img>');
+      $('#container').css("height", 500);
+      $('#container').css("width", 500);
+      $('#change-me').text('Something different');
+      $('#change-me').append(' this is appended');
+      $('#change-me').html('<p></p>')
+         //$('body').text('hello?')
+   </script>
+</body>
+
+</html>

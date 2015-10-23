@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <style>
+      .fizzbuzz {
+         font-size: 1.5em;
+         color: #F44336;
+      }
+
+      .fizz {
+         font-size: 1.5em;
+         color: #2196F3;
+      }
+
+      .buzz {
+         font-size: 1.5em;
+         color: #F57F17;
+      }
+      #usrNums{
+         font-size: 1.2em;
+         color: #4E342E;
+      }
+   </style>
+   <title>Choose your Buzz</title>
+   <link href="minimal.css" rel="stylesheet">
+</head>
+
+<body>
+   <h1 class="text-center">What's so special about 3 and 5 anyway???</h1>
+   <p class="text-center">Pick your own fizzbuzz numbers, how very fun!</p>
+   <div id="usrNums" class="text-center"></div>
+   <br>
+   <div id="fizzy" class="text-center"></div>
+
+   <script type="text/javascript">
+      var counter = 1;
+      var string;
+      var usrnum1 = prompt("Please enter your first number.");
+      var usrnum2 = prompt("Please enter your second number.");
+
+      while (counter <= 100) {
+         string = "";
+         if (counter % usrnum1 === 0 && counter % usrnum2 === 0) {
+            string = '<div class="fizzbuzz">fizzbuzz</div>';
+         } else if (counter % usrnum2 === 0) {
+            string = '<div class="buzz">buzz</div>';
+         } else if (counter % usrnum1 === 0) {
+            string = '<div class="fizz">fizz</div>';
+         } else {
+            string = '<div>' + counter + '</div>';
+         }
+         document.querySelector('#usrNums').textContent = "You chose " + usrnum1 + " & " + usrnum2 + ".";
+         document.querySelector('#fizzy').innerHTML += string;
+
+         counter++;
+      }
+   </script>
+
+</body>
+
+</html>

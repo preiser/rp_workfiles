@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/normalize.css">
+   <link rel="stylesheet" href="css/skeleton.css">
+   <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+   <div id="answer"></div>
+   <div id="secret"></div>
+
+   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+   <script>
+      var answer_logger = function(func) {
+         $('#answer').text(func())
+      };
+
+      answer_logger(function() {
+         return "I should appear in div#answer!"
+      });
+
+      // var results_array = [];
+      // var answer_collector = function(array) {
+      //    for (var i = 0; i < results_array.length; i++) {
+      //       results_array[i] = array[i]();
+      //    }
+      //    return results_array;
+      // };
+      var results_array = [];
+      var answer_collector = function(arr) {
+         for (var i = 0; i < arr.length; i++) {
+            results_array.push(arr[i]());
+         }
+         return results_array;
+      };
+
+      var fn1 = function() {
+         return "this should be the first value in results array"
+      }
+
+      answer_collector([fn1, function() {
+         return "this should be the second value in results array"
+      }])
+
+      // console.log(results_array);
+
+      var secret_keeper = function(str1, str2) {
+         var secret = "secret";
+         $('#secret').append(str1, secret, str2);
+      };
+
+      secret_keeper('hello ', ' hello');
+
+      // var multiplies_by = function(num) {
+      //    var num = num;
+      //    return function(num2) {
+      //       return num * num2;
+      //    }
+      // };
+      //
+      // multiplies_by
+
+      var multiples = function(input) {
+         var input1 = input;
+         return function(input2) {
+            return input1 * input2;
+         }
+      }
+
+      var multipleBy4 = multiples(4);
+
+
+      console.log(multipleBy4(5))
+   </script>
+</body>
+
+</html>

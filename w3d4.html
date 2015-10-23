@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Imgur</title>
+</head>
+<body>
+
+<form id="form1" onsubmit="get_pictures()">
+
+<div id="output"></div>
+
+What would you like to search?<br>
+<input id="input1" text="text" name="search">
+<input type="submit">
+
+</form>
+
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+<script type="text/javascript">
+
+var get_pictures = function () {
+    // console.log(searchTerm);
+    // console.log(encodeURI(searchTerm));
+    var userInput = $('#input1').val();
+  $.ajax({
+    url: "https://api.imgur.com/3/gallery/search?q="+ userInput,
+    headers: { "Authorization": "Client-ID e3776adbe9c5fb9" },
+    success: function(response){
+      console.log(response);
+    }
+  });
+};
+
+$("#form1").submit(function(e) {
+    e.preventDefault();
+});
+
+
+
+// get_pictures();
+
+
+
+</script>
+</body>
+</html>

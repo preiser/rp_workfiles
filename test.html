@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+</head>
+
+<body>
+   <div class="one">one</div>
+   <div class="two">two</div>
+   <div class="three">three</div>
+   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+   <script>
+      var elFinder = function(event) {
+         console.log("calling for: ", this, event.target);
+         $(this).css('color', 'green');
+      };
+      $('div').click(elFinder);
+   </script>
+</body>
+
+</html>

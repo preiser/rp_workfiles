@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Document</title>
+   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+</head>
+
+<body>
+
+   <div id="theDiv"> </div>
+
+   <script>
+      //bucketlist array
+
+      var bucket_list = []
+      bucket_list[0] = "Millionaire";
+      bucket_list[1] = "travel the world";
+      bucket_list.push("also travel", "finish HR");
+      console.log(bucket_list);
+
+      bucket_list.unshift("hope to survive", "love my life");
+      console.log(bucket_list);
+      bucket_list.length
+      var dying_wish = bucket_list.pop();
+      console.log(dying_wish);
+      var do_it_now = bucket_list.shift();
+      console.log(do_it_now);
+      bucket_list.length;
+
+      var append_strings = function(array, string) {
+         for (var i = 0; i < array.length; i++) {
+            console.log(array[i]);
+            var listItem = array[i];
+            $('#theDiv').append(listItem + ", ");
+         }
+      }
+
+      append_strings(bucket_list, '#theDiv');
+   </script>
+
+</body>
+
+</html>

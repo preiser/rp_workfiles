@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+    <body>
+    <div id="greeting"></div>
+
+    <p>It is so nice to have someone from <span id= "hometown"></span>.</p> <p>Today is the first day of remote prep.</p>
+
+    <div id="source">
+        <p><strong>Hello there, I am writing to you from the United States.</strong></p>
+    </div>
+
+    <div id="destination"><p>Hello, I said something else though...</p></div>
+
+    <div id="swap_1"><p>This is paragraph 1 where 2 should be.</p></div>
+
+    <div id="swap_2"><p>This is paragraph 2 where 1 should be.</p></div>
+
+    <script type="text/javascript">
+
+        alert("This site is new!");
+
+        var visitor_name = prompt("What's your name?");
+        alert("Well hello " + visitor_name + "!");
+        var welcome_message = "Hello " + visitor_name + "!";
+        var town = prompt("What is your hometown?");
+
+        var sourceText = document.querySelector('#source').textContent;
+
+        var swap1Text = document.querySelector('#swap_1').innerHTML;
+        var swap2Text = document.querySelector('#swap_2').innerHTML;
+
+        document.querySelector('#greeting').textContent = welcome_message;
+        document.querySelector('#hometown').textContent = town;
+
+        document.querySelector('#destination').innerHTML = sourceText;
+
+        document.querySelector('#swap_1').innerHTML = swap2Text;
+        document.querySelector('#swap_2').innerHTML = swap1Text;
+
+        console.log("What kind of silly name is " + visitor_name + " anyway?!?! HAHAHA!")
+
+        console.log("This seems to work just as well!");
+        console.log("Well now... \nThis is " + "rather clever, \n\tdon't you think?")
+
+    </script>
+
+    </body>
+</html>

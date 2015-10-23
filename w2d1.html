@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+   <style>
+   span{
+      font-size: 3em;
+   }
+   </style>
+</head>
+<body>
+
+   <div id="output"></div>
+
+   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+   <script>
+
+   // var string_printer = function (x) {
+   //    $('#output').text(x);
+   // };
+   //
+   // string_printer('hello');
+
+   var funny_sentence = function (noun, adj, verb, adv){
+      var string = noun + " " + adj + " " + verb + " " + adv + " " + ".";
+      $('#output').append("<span>" + string + "</span>");
+   };
+
+   funny_sentence('Funny', 'rabbits', 'jump', 'gleefully');
+
+
+   </script>
+</body>
+</html>

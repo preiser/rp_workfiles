@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Simple Adventure Game</title>
+	</head>
+	<body>
+
+		<div id = "outcome1"></div>
+		<div id = "outcome2"></div>
+
+		<script>
+		/*You're walking on the street and you see a $100 bill on the ground.
+		Do you pick it up?
+			Yes > Oh no! It's stuck to the ground with gum! Do you keep pulling?
+				Yes>It ripped! Damn.
+				No>Yea, I think it wasn't meant to be.
+			No > Wow, you're a better person than me! But wait, here's a $20 bill!
+		Do you pick it up?
+			Yes>It's your lucky day!
+			No>Well, good for you I guess.*/
+
+		var pickUp = prompt("You're walking all the way on the street and you see a $100 bill on the ground. Do you really pick it up? Are you serious about this??");
+
+		if (pickUp === "yes") {
+			var stillPull = prompt("Oh no, it's stuck to the ground with gum! Do you keep pulling?");
+			if (stillPull === "yes") {
+				document.querySelector('#outcome1').textContent = "It ripped! Damn."
+			}	else {
+					document.querySelector('#outcome1').textContent = "Yea I think it wasn't meant to be."
+			}
+		}
+
+		else if (pickUp === "no") {
+			var twentyDol = prompt("Wow, you're a better person than me! But wait, here's a $20 bill! Do you pick that up?!?");
+			if (twentyDol === "yes"){
+				document.querySelector('#outcome2').textContent = "It's your lucky day!"
+			}	else {
+					document.querySelector('#outcome2').textContent = "Well, good for you, I guess."
+			}
+		}
+
+
+		</script>
+
+	</body>
+</html>
